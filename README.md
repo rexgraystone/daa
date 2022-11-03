@@ -12,7 +12,7 @@ This repository contains all the C programs that I have executed in my Design an
 | 4  | 4_QuickSort.c  | A C program to sort an array using Quick Sort Algorithm. |
 | 5  | 5_Prims.c  | A C program to find the Minimum Cost Spanning Tree of a given graph using Prim's Algorithm. |
 
-## Miscelleaneous Programs
+## Miscellaneous Programs
 
 | Serial No. | C File Name | Description |
 | :---: | :--- | :--- |
