@@ -20,7 +20,15 @@ This repository contains all the C programs that I have executed in my Design an
 
 ## How to Run
 
-1. Ensure that you have a C compiler installed on your system. If not, you can download one from [here](https://sourceforge.net/projects/mingw/) or using your package manager.
+1. Ensure that you have a C compiler installed on your system.
+
+    ```bash
+    gcc --version
+    ```
+
+    It should look something like this ![GCC Version](Images/GCC_Version.png "GCC Version")
+
+    If you don't have a C compiler installed, you can download one from [here](https://sourceforge.net/projects/mingw/) or using your package manager.
 
     Examples:
     - Ubuntu -
@@ -42,7 +50,6 @@ This repository contains all the C programs that I have executed in my Design an
     ```
 
     Additionaly, if you are using Windows, follow the steps specified [here](https://www.scaler.com/topics/c/c-compiler-for-windows/).
-
 2. Clone the repository using the following command:
 
     ``` bash
