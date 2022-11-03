@@ -1,5 +1,5 @@
 /*  
-    5. Write a program to find Minimum Cost Spanning Tree using Prim's algorithm.
+    5. Write a program to find the Minimum Cost Spanning Tree using Prim's algorithm.
 */
 
 #include <stdio.h>

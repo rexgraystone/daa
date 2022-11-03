@@ -1,5 +1,5 @@
 /*
-    2. Write a program to search for a key element in an array using binary search.
+    2. Write a program to search for a key element in an array using binary search algorithm.
 */
 
 #include <stdio.h>

@@ -1,5 +1,5 @@
 /*
-    4. Write a program to sort an array using quick sort.
+    4. Write a program to sort an array using quick sort algorithm.
 */
 
 #include <stdio.h>

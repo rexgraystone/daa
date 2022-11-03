@@ -1,5 +1,5 @@
 /*
-    3. Write a program to sort an array using merge sort.
+    3. Write a program to sort an array using merge sort algorithm.
 */
 
 #include <stdio.h>
