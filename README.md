@@ -10,6 +10,12 @@ This repository contains all the C programs that I have executed in my Design an
         gh repo clone rexgraystone/os
     ```
 
+    or
+
+    ``` bash
+        git clone https://github.com/rexgraystone/daa.git
+    ```
+
 2. Change the directory to the cloned repository:
 
     ``` bash
