@@ -7,16 +7,16 @@ This repository contains all the C programs that I have executed in my Design an
 | Serial No. | C File Name | Description |
 | :---: | :--- | :--- |
 | 1  | [1_TowerOfHanoi.c](https://github.com/rexgraystone/daa/blob/master/1_TowerOfHanoi.c)  | A C program to implement Tower of Hanoi using recursion. |
-| 2  | 2_BinSearch.c  | A program to search for a key element in an array using binary search algorithm. |
-| 3  | 3_MergeSort.c  | A C program to sort an array using Merge Sort Algorithm. |
-| 4  | 4_QuickSort.c  | A C program to sort an array using Quick Sort Algorithm. |
-| 5  | 5_Prims.c  | A C program to find the Minimum Cost Spanning Tree of a given graph using Prim's Algorithm. |
+| 2  | [2_BinSearch.c](https://github.com/rexgraystone/daa/blob/master/2_BinSearch.c)  | A program to search for a key element in an array using binary search algorithm. |
+| 3  | [3_MergeSort.c](https://github.com/rexgraystone/daa/blob/master/3_MergeSort.c)  | A C program to sort an array using Merge Sort Algorithm. |
+| 4  | [4_QuickSort.c](https://github.com/rexgraystone/daa/blob/master/4_QuickSort.c)  | A C program to sort an array using Quick Sort Algorithm. |
+| 5  | [5_Prims.c](https://github.com/rexgraystone/daa/blob/master/5_Prims.c)  | A C program to find the Minimum Cost Spanning Tree of a given graph using Prim's Algorithm. |
 
 ## Miscellaneous Programs
 
 | Serial No. | C File Name | Description |
 | :---: | :--- | :--- |
-| 1  | M_Factorial.c  | Write a C program to find the factorial of a number using Recursion. |
+| 1  | [M_Factorial.c](https://github.com/rexgraystone/daa/blob/master/M_Factorial.c)  | Write a C program to find the factorial of a number using Recursion. |
 
 ## How to Run
 
