@@ -23,7 +23,7 @@ This repository contains all the C programs that I have executed in my Design an
 1. Clone the repository using the following command:
 
     ``` bash
-        gh repo clone rexgraystone/os
+        gh repo clone rexgraystone/daa
     ```
 
     or
@@ -35,7 +35,7 @@ This repository contains all the C programs that I have executed in my Design an
 2. Change the directory to the cloned repository:
 
     ``` bash
-        cd os
+        cd daa
     ```
 
 3. Compile the C program using the following command:
