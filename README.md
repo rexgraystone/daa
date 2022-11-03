@@ -50,34 +50,35 @@ This repository contains all the C programs that I have executed in my Design an
     ```
 
     Additionaly, if you are using Windows, follow the steps specified [here](https://www.scaler.com/topics/c/c-compiler-for-windows/).
+
 2. Clone the repository using the following command:
 
     ``` bash
-        gh repo clone rexgraystone/daa
+    gh repo clone rexgraystone/daa
     ```
 
     or
 
     ``` bash
-        git clone https://github.com/rexgraystone/daa.git
+    git clone https://github.com/rexgraystone/daa.git
     ```
 
 3. Change the directory to the cloned repository:
 
     ``` bash
-        cd daa
+    cd daa
     ```
 
 4. Compile the C program using the following command:
 
     ``` bash
-        gcc <C File Name> -o <Output File Name>
+    gcc <C File Name> -o <Output File Name>
     ```
 
 5. Run the program using the following command:
 
     ``` bash
-        ./<Output File Name>
+    ./<Output File Name>
     ```
 
 ### Note
