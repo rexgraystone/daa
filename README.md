@@ -6,7 +6,7 @@ This repository contains all the C programs that I have executed in my Design an
 
 | Serial No. | C File Name | Description |
 | :---: | :--- | :--- |
-| 1  | 1_TowerOfHanoi.c  | A C program to implement Tower of Hanoi using recursion. |
+| 1  | [1_TowerOfHanoi.c](https://github.com/rexgraystone/daa/blob/master/1_TowerOfHanoi.c)  | A C program to implement Tower of Hanoi using recursion. |
 | 2  | 2_BinSearch.c  | A program to search for a key element in an array using binary search algorithm. |
 | 3  | 3_MergeSort.c  | A C program to sort an array using Merge Sort Algorithm. |
 | 4  | 4_QuickSort.c  | A C program to sort an array using Quick Sort Algorithm. |
