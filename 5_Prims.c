@@ -1,5 +1,5 @@
 /*  
-    5. Write a program to find the Minimum Cost Spanning Tree using Prim's algorithm.
+    5. Write a program to find the Minimum Cost Spanning Tree of a given graph using Prim's algorithm.
 */
 
 #include <stdio.h>
