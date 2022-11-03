@@ -20,7 +20,30 @@ This repository contains all the C programs that I have executed in my Design an
 
 ## How to Run
 
-1. Clone the repository using the following command:
+1. Ensure that you have a C compiler installed on your system. If not, you can download one from [here](https://sourceforge.net/projects/mingw/) or using your package manager.
+
+    Examples:
+    - Ubuntu -
+
+    ```bash
+    sudo apt install gcc
+    ```
+
+    - Arch Linux -
+
+    ```bash
+    sudo pacman -S gcc
+    ```
+
+    - macOS -
+
+    ```bash
+    brew install gcc
+    ```
+
+    Additionaly, if you are using Windows, follow the steps specified [here](https://www.scaler.com/topics/c/c-compiler-for-windows/).
+
+2. Clone the repository using the following command:
 
     ``` bash
         gh repo clone rexgraystone/daa
@@ -32,19 +55,19 @@ This repository contains all the C programs that I have executed in my Design an
         git clone https://github.com/rexgraystone/daa.git
     ```
 
-2. Change the directory to the cloned repository:
+3. Change the directory to the cloned repository:
 
     ``` bash
         cd daa
     ```
 
-3. Compile the C program using the following command:
+4. Compile the C program using the following command:
 
     ``` bash
         gcc <C File Name> -o <Output File Name>
     ```
 
-4. Run the program using the following command:
+5. Run the program using the following command:
 
     ``` bash
         ./<Output File Name>
