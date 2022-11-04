@@ -2,40 +2,40 @@
     2. Write a program to search for a key element in an array using binary search algorithm.
 */
 
-#include <stdio.h>
-#include <time.h>
+#include <stdio.h> 
+#include <time.h> 
 
-int BinSearch(int arr[], int l, int h, int n) {
-    if (h >= l) {
-        int m = l + (h - l)/2;
-        if (arr[m] == n) {
-            return m;
+int binarySearch(int arr[], int l, int h, int n) { // l = low, h = high, n = number to be searched
+    if (h >= l) { // base case
+        int m = l + (h - l)/2; // calculate the middle index
+        if (arr[m] == n) { // if the middle element is the number to be searched
+            return m; // return the middle index
         }
-        if (arr[m] > n) {
-            return BinSearch(arr, l, m-1, n);
+        if (arr[m] > n) { // if the middle element is greater than the number to be searched
+            return binarySearch(arr, l, m-1, n); // search in the left subarray
         }    
-        return BinSearch(arr, m+1, h, n);
+        return binarySearch(arr, m+1, h, n); // search in the right subarray
     }
-    return -1;
+    return -1; // if the number is not found
 }
 
-int main(void) {
-    int arr[] = {1, 4, 7, 9, 16, 56, 70};
-    int l = 0;
-    int h = 7;
-    int n, st, et, tt;
-    printf("Enter a number: \n");
-    scanf("%d", &n);
-    st = clock();
-    int i = BinSearch(arr, l, h-1, n);
-    et = clock();
-    tt = et - st;
-    if(i == -1 ) {
-        printf("Element %d not found in the array.\n", n);
+int main(void) { 
+    int arr[] = {1, 4, 7, 9, 16, 56, 70}; // array to be searched
+    int l = 0; // low index
+    int h = 7; // high index
+    int n, st, et, tt; // n = number to be searched, st = start time, et = end time, tt = total time
+    printf("Enter a number: \n"); // input the number to be searched
+    scanf("%d", &n); // store the number to be searched in n
+    st = clock(); // start time
+    int i = binarySearch(arr, l, h-1, n); // call the function
+    et = clock(); // end time
+    tt = et - st; // total time
+    if(i == -1 ) { // if the number is not found
+        printf("Element %d not found in the array.\n", n); // print the number is not found
     }
-    else {
-        printf("Element %d found at index: %d.\n", n, i);
+    else { // if the number is found
+        printf("Element %d found at index: %d.\n", n, i); // print the number is found
     }
-    printf("Total time taken is %d ms.\n", tt);
+    printf("Total time taken is %d ms.\n", tt); // print the total time
     return 0;
 }
