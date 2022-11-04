@@ -5,17 +5,14 @@
 #include<stdio.h>
 #include<time.h>
 
-unsigned int factorial(int n)
-{
-    if(n == 1)
-    {
+unsigned int factorial(int n) {
+    if(n == 1) {
         return 1;
     }
     return n * factorial(n-1);
 }
 
-int main()
-{
+int main() {
     int n = 5, st, et, tt;
     st = clock();
     printf("\nThe factorial of %d is %d.", n, factorial(n)); 

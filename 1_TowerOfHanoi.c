@@ -7,10 +7,8 @@
 
 int count = 0;
 
-void TOH(int n, char beg, char mid, char end)
-{
-    if(n == 1)
-    {
+void TOH(int n, char beg, char mid, char end) {
+    if(n == 1) {
         printf("%d. ", ++count);
         printf("Moving disk 1 from tower %c to tower %c.\n", beg, end);
         return;
@@ -21,8 +19,7 @@ void TOH(int n, char beg, char mid, char end)
     TOH(n - 1, mid, beg, end);
 }
 
-int main()
-{
+int main() {
     int n, st, et, tt;
     printf("Enter the number of disks: ");
     scanf("%d", &n);
