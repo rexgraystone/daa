@@ -11,6 +11,7 @@ This repository contains all the C programs that I have executed in my Design an
 | 3  | [3_mergeSort.c](https://github.com/rexgraystone/daa/blob/master/3_mergeSort.c)  | A C program to sort an array using Merge Sort Algorithm. |
 | 4  | [4_quickSort.c](https://github.com/rexgraystone/daa/blob/master/4_quickSort.c)  | A C program to sort an array using Quick Sort Algorithm. |
 | 5  | [5_primsAlgorithm.c](https://github.com/rexgraystone/daa/blob/master/5_primsAlgorithm.c)  | A C program to find the Minimum Cost Spanning Tree of a given graph using Prim's Algorithm. |
+| 6  | [6_kruskalsAlgorithm.c](https://github.com/rexgraystone/daa/blob/master/6_kruskalsAlgorithm.c)  | A C program to find the Minimum Cost Spanning Tree of a given graph using Kruskal's Algorithm. |
 
 ## Miscellaneous Programs
 
