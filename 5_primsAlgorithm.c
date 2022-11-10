@@ -1,49 +1,99 @@
-/*  
-    5. Write a program to find the Minimum Cost Spanning Tree of a given graph using Prim's algorithm.
-*/
+# include <stdio.h>
+# include <stdlib.h>
+# include <time.h>
 
-#include <stdio.h>
-#include <stdbool.h>
-
-# define INF 99999999 //infinity
+# define infinity 9999
+# define MAX 20
+ 
+int initialGraph[MAX][MAX], spanningTree[MAX][MAX], n;
+ 
+int prims();
+void displayGraph(int [][MAX], int);
 
 int main() {
-    int i, j, e; // i = index for rows, j = index for columns, e = number of edges
-    int g[6][6], selected[6]; // g = graph, selected = selected vertices
-    int n, x; // n = number of vertices, x = number of edges
-    int y, min; // y = minimum cost
-    printf("Enter the number of vertices less than 6: "); // input the number of vertices
-    scanf("%d", &n); // input the number of vertices
-    printf("Input the weighted graph in terms of matrix: \n"); // input the weighted graph in terms of matrix
-    memset(selected, false, sizeof(selected));
-    for(i = 0; i < n; i++) { // for all the vertices
-        for(j = 0; j < n; j++) { 
-            scanf("%d", &g[i][j]);
-        }
-    }
-    memset(selected, false, sizeof(selected)); // set all the elements of selected to false
-    int e = 0; // initialize e to 0
-    selected[0] = true; // select the first vertex
-    printf("Edge \tWeight\n"); // print the edges and their weights
-    while(e < (n - 1)) { // run the loop until all the edges are selected
-        int min = INF; // initialize min to infinity
-        int x = 0; // initialize x to 0
-        int y = 0; // initialize y to 0
-        for(int i = 0; i < n; i++) { // for all the vertices
-            if(selected[i]) { // if the vertex is selected
-                for(int j = 0; j < n; j++) { // for all the vertices
-                    if(!selected[j] && g[i][j]) { // if the vertex is not selected and the edge exists
-                        if(min > g[i][j]) { // if the weight of the edge is less than min
-                            min = g[i][j]; // update min
-                            x = i; // update x
-                            y = j; // update y
-                        }
-                    }
-                }
+	int i, j, startTime, endTime, totalTime, totalCost;
+	printf("Enter no. of vertices: "); 
+	scanf("%d", &n);
+	printf("\nEnter the adjacency matrix: \n");
+    for(i = 0; i < n; i++) {
+        for(j = 0; j < n; j++) {
+                printf("\n Enter the weight for the edge connecting the vertices [%d] and [%d]: ", i, j);
+                scanf("%d", &initialGraph[i][j]);
             }
         }
+	printf("\nThe initial graph is: \n");
+    displayGraph(initialGraph, n);
+	startTime = clock();
+	totalCost = prims();
+	printf("\nThe spanning tree is: \n");
+	displayGraph(spanningTree, n);
+	printf("\n\nTotal cost of spanning tree = %d", totalCost);
+    endTime = clock();
+	totalTime = endTime - startTime;
+   	printf("\nStart Time = %d ms \nEnd Time = %d ms \nTotal Time = %d ms\n", startTime, endTime, totalTime);
+	return 0;
+}
+
+void displayGraph(int Graph[][MAX], int n) {
+    int i, j;
+    printf("\nMatrix: ");
+    for(i = 0; i < n; i++) {
+        printf("\n");
+        for(j = 0; j < n; j++) {
+            printf("%d\t", *(*(Graph + i) + j));
+        }
     }
-    printf("%d - %d \t%d", x, y, g[x][y]); // print the edge and its weight
-    selected[y] = true; // select the vertex
-    return 0; // return 0
+}
+
+int prims() {
+	int cost[MAX][MAX];
+	int u, v, minDistance, distance[MAX], from[MAX];
+	int visited[MAX], noOfEdges, i, minCost, j;
+	//create cost[][] matrix, spanningTree[][]
+	for(i = 0; i < n; i++) {
+		for(j = 0; j < n; j++) {
+			if(initialGraph[i][j] == 0) {
+				cost[i][j] = infinity;
+            }
+			else {
+				cost[i][j] = initialGraph[i][j];
+				spanningTree[i][j] = 0;
+            }
+		}
+    }
+	//initialise visited[], distance[] and from[]
+	distance[0] = 0;
+	visited[0] = 1;
+	for(i = 1; i < n; i++) {
+		distance[i] = cost[0][i];
+		from[i] = 0;
+		visited[i] = 0;
+	}
+	minCost = 0;		//cost of spanningTree tree
+	noOfEdges = (n - 1);		//no. of edges to be added
+	while(noOfEdges > 0) {
+		//find the vertex at minimum distance from the tree
+		minDistance = infinity;
+		for(i = 1; i < n; i++) {
+			if((visited[i] == 0) && (distance[i] < minDistance)) {
+				v = i;
+				minDistance = distance[i];
+			}
+        }
+		u = from[v];
+		//insert the edge in spanningTree tree
+		spanningTree[u][v] = distance[v];
+		spanningTree[v][u] = distance[v];
+		noOfEdges--;
+		visited[v] = 1;
+		//updated the distance[] array
+		for(i = 1; i < n; i++) {
+			if((visited[i] == 0) && (cost[i][v] < distance[i])) {
+				distance[i] = cost[i][v];
+				from[i] = v;
+			}
+        }
+		minCost = minCost + cost[u][v];
+	}
+	return(minCost);
 }

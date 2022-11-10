@@ -57,14 +57,14 @@ void printArr(int arr[n]) { // print the elements of the array
 
 int main() {
     int arr[n];
-    int st, et, tt;
+    int startTime, endTime, totalTime;
     enterArr(arr);
-    st = clock();
+    startTime = clock();
     mergeSort(arr, 0, (n - 1));
-    et = clock();
+    endTime = clock();
     printf("\nThe array has been sorted.\n\n");
     printArr(arr);
-    tt = et - st;
-    printf("\nTotal time taken is %d ms.\n", tt);
+    totalTime = endTime - startTime;
+    printf("\nTotal time taken is %d ms.\n", totalTime);
     return 0;
 }

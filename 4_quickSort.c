@@ -56,14 +56,14 @@ void printArr(int arr[n]) { // print the elements of the array
 
 int main() {
     int arr[n]; // array to be sorted
-    int st, et, tt; // st = start time, et = end time, tt = total time
+    int st, endTime, totalTime; 
     enterArr(arr); // call the function to enter the elements of the array
     st = clock(); // start time
     quickSort(arr, 0, (n - 1)); // call the function to sort the array
-    et = clock(); // end time
+    endTime = clock(); // end time
     printf("\nThe array has been sorted.\n\n"); // print the array has been sorted
     printArr(arr); // call the function to print the elements of the array
-    tt = et - st; // total time
-    printf("Total time taken is %d ms.\n", tt); // print the total time
+    totalTime = endTime - st; // total time
+    printf("Total time taken is %d ms.\n", totalTime); // print the total time
     return 0; 
 }

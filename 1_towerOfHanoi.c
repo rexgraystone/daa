@@ -20,13 +20,13 @@ void towerOfHanoi(int n, char beg, char mid, char end) { // beg = beginning, mid
 }
 
 int main() {
-    int n, st, et, tt; // n = number of disks, st = start time, et = end time, tt = total time
+    int n, startTime, endTime, totalTime; // n = number of disks
     printf("Enter the number of disks: "); // input the number of disks
     scanf("%d", &n); // store the number of disks in n
-    st = clock(); // start time
+    startTime = clock(); // start time
     towerOfHanoi(n, 'A', 'C', 'B'); // call the function
-    et = clock(); // end time
-    tt = et - st; // total time
-    printf("Total time taken is %d ms.\n", tt); // print the total time
+    endTime = clock(); // end time
+    totalTime = endTime - startTime; // total time
+    printf("Total time taken is %d ms.\n", totalTime); // print the total time
     return 0;
 }
