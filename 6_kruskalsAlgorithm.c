@@ -1,4 +1,4 @@
-# include <stdio.h>
+# include <stdio.h>tt
 # include <time.h>
 #define infinity 999
 typedef struct graph {
@@ -9,7 +9,7 @@ gr g[20];
 int nodes, edges;
 
 void main() {
-    int k,st,et,tt;
+    int k, startTime, endTime, totalTime;
     void spanningTree();
     printf("\n\tGRAPH CREATION\n");
     printf("Enter no of nodes\n");
@@ -18,14 +18,14 @@ void main() {
     scanf("%d", &edges);
     for(k = 0; k < edges; k++) {
         printf("Enter edge v1 to v2:");
-        scanf("%d%d", &g[k].v1, &g[k].v2);
+        scanf("%d %d", &g[k].v1, &g[k].v2);
         printf("Enter the cost:");
         scanf("%d", &g[k].cost);
     }
-    st = clock();
+    startTime = clock();
     spanningTree();
-    tt = et - st;
-    printf("Start Time = %d\n	End Time = %d\n	Total Time = %d", st, et, tt);
+    totalTime = endTime - startTime;
+    printf("Start Time = %d\n	End Time = %d\n	Total Time = %d", startTime, endTime, totalTime);
 }
 
 int find(int v2, int parent[]) {
