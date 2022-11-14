@@ -19,10 +19,10 @@ int main() {
 	printf("Enter no. of vertices: "); 
 	scanf("%d", &n);
 	printf("\nEnter the adjacency matrix: \n");
-    for(i = 1; i <= n; i++) {
-        for(j = 1; j <= n; j++) {
-				char a = (char)i + 64;
-				char b = (char)j + 64;
+    for(i = 0; i < n; i++) {
+        for(j = 0; j < n; j++) {
+				char a = (char)i + 65;
+				char b = (char)j + 65;
                 printf("\n Enter the weight for the edge connecting the vertices [%c] and [%c]: ", a, b);
                 scanf("%d", &initialGraph[i][j]);
             }
@@ -31,7 +31,7 @@ int main() {
     displayGraph(initialGraph, n);
 	startTime = clock();
 	totalCost = prims();
-	printf("\nThe spanning tree is: \n");
+	printf("\n\nThe spanning tree is: \n");
 	displayGraph(spanningTree, n);
 	printf("\n\nTotal cost of spanning tree = %d", totalCost);
     endTime = clock();
@@ -42,11 +42,15 @@ int main() {
 
 void displayGraph(int Graph[][MAX], int n) {
     int i, j;
-    printf("\nMatrix: ");
+	for(i = 0; i < n; i++) {
+		char column = (char)i + 65;
+		printf("\t[%c]", column);
+	}
     for(i = 0; i < n; i++) {
-        printf("\n");
+		char row = (char)i + 65;
+        printf("\n[%c]\t", row);
         for(j = 0; j < n; j++) {
-            printf("%d\t", *(*(Graph + i) + j));
+            printf(" %d\t", *(*(Graph + i) + j));
         }
     }
 }
