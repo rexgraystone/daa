@@ -1,3 +1,7 @@
+/*
+	5. Write a C program to find the minimum spanning tree using Prim's algorithm.
+*/
+
 # include <stdio.h>
 # include <stdlib.h>
 # include <time.h>

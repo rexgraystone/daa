@@ -1,3 +1,7 @@
+/*
+    6. Write a C program to implement Kruskal's algorithm for finding the minimum spanning tree of a given weighted graph.
+*/
+
 # include <stdio.h>
 # include <time.h>
 
