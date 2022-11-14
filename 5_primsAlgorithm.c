@@ -6,7 +6,7 @@
 # include <stdlib.h>
 # include <time.h>
 
-# define infinity 9999
+# define infinity 9999 
 # define MAX 20
  
 int initialGraph[MAX][MAX], spanningTree[MAX][MAX], n;
@@ -16,13 +16,13 @@ void displayGraph(int [][MAX], int);
 
 int main() {
 	int i, j, startTime, endTime, totalTime, totalCost;
-	printf("Enter no. of vertices: "); 
+	printf("Enter the number of vertices in the graph: "); 
 	scanf("%d", &n);
 	printf("\nEnter the adjacency matrix: \n");
     for(i = 0; i < n; i++) {
         for(j = 0; j < n; j++) {
-				char a = (char)i + 65;
-				char b = (char)j + 65;
+				char a = (char)i + 65; // to get ASCII value of vertices
+				char b = (char)j + 65; 
                 printf("\n Enter the weight for the edge connecting the vertices [%c] and [%c]: ", a, b);
                 scanf("%d", &initialGraph[i][j]);
             }
