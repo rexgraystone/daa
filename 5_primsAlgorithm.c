@@ -19,9 +19,11 @@ int main() {
 	printf("Enter no. of vertices: "); 
 	scanf("%d", &n);
 	printf("\nEnter the adjacency matrix: \n");
-    for(i = 0; i < n; i++) {
-        for(j = 0; j < n; j++) {
-                printf("\n Enter the weight for the edge connecting the vertices [%d] and [%d]: ", i, j);
+    for(i = 1; i <= n; i++) {
+        for(j = 1; j <= n; j++) {
+				char a = (char)i + 64;
+				char b = (char)j + 64;
+                printf("\n Enter the weight for the edge connecting the vertices [%c] and [%c]: ", a, b);
                 scanf("%d", &initialGraph[i][j]);
             }
         }
