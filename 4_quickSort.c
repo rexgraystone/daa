@@ -2,8 +2,8 @@
     4. Write a program to sort an array using quick sort algorithm.
 */
 
-#include <stdio.h>
-#include <time.h>
+# include <stdio.h>
+# include <time.h>
 
 int n = 15; // number of elements in the array
 

@@ -1,6 +1,8 @@
-# include <stdio.h>tt
+# include <stdio.h>
 # include <time.h>
-#define infinity 999
+
+# define infinity 999
+
 typedef struct graph {
     int v1, v2, cost;
 } gr;
@@ -8,7 +10,7 @@ typedef struct graph {
 gr g[20];
 int nodes, edges;
 
-void main() {
+int main() {
     int k, startTime, endTime, totalTime;
     void spanningTree();
     printf("\n\tGRAPH CREATION\n");
@@ -25,7 +27,8 @@ void main() {
     startTime = clock();
     spanningTree();
     totalTime = endTime - startTime;
-    printf("Start Time = %d\n	End Time = %d\n	Total Time = %d", startTime, endTime, totalTime);
+    printf("\nStart Time = %d\n	End Time = %d\n	Total Time = %d\n", startTime, endTime, totalTime);
+    return 0;
 }
 
 int find(int v2, int parent[]) {
@@ -34,9 +37,10 @@ int find(int v2, int parent[]) {
     }
     return v2;
 }
+
 void unionFunc(int i, int j, int parent[10]) {
     if(i < j) {
-        parent[j] =i ;
+        parent[j] = i;
     }
     else {
         parent[i] = j;
@@ -65,15 +69,15 @@ void spanningTree() {
     for(i = 0; i < nodes; i++) {
         parent[i] = i;
     }
-    while(count != nodes - 1) {
+    while(count != (nodes - 1)) {
         pos = minimum(edges);
         if(pos == -1) {
             break;
         }
         v1 = g[pos].v1;
         v2 = g[pos].v2;
-        i = find(v1,parent);
-        j = find(v2,parent);
+        i = find(v1, parent);
+        j = find(v2, parent);
         if(i != j) {
             tree[k][0] = v1;
             tree[k][1] = v2;
@@ -92,7 +96,7 @@ void spanningTree() {
             printf("-");
             printf("%d\n", tree[i][1]);
         }
-        printf("\nCost of spanning tree is: %d",sum);
+        printf("\nCost of spanning tree is: %d", sum);
     }
     else {
         printf("No spanning tree");

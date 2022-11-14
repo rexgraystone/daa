@@ -2,8 +2,8 @@
     1. Write a program to solve the Tower of Hanoi problem.
 */
 
-#include <stdio.h>
-#include <time.h> 
+# include <stdio.h>
+# include <time.h> 
 
 int count = 0;
 

@@ -2,8 +2,8 @@
     2. Write a program to search for a key element in an array using binary search algorithm.
 */
 
-#include <stdio.h> 
-#include <time.h> 
+# include <stdio.h> 
+# include <time.h> 
 
 int binarySearch(int arr[], int l, int h, int n) { // l = low, h = high, n = number to be searched
     if (h >= l) { // base case

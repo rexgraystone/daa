@@ -2,8 +2,8 @@
     M. Write a program to find the factorial of a number using recursion.
 */
 
-#include <stdio.h>
-#include <time.h>
+# include <stdio.h>
+# include <time.h>
 
 unsigned int printFactorial(int n) { // n = number
     if(n == 1) { // base case
