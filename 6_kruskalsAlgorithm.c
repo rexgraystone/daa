@@ -14,9 +14,10 @@ typedef struct graph {
 gr g[20];
 int nodes, edges;
 
+void spanningTree();
+
 int main() {
     int k, startTime, endTime, totalTime;
-    void spanningTree();
     printf("\n\tGRAPH CREATION\n");
     printf("Enter no of nodes\n");
     scanf("%d", &nodes);
@@ -30,6 +31,7 @@ int main() {
     }
     startTime = clock();
     spanningTree();
+    endTime = clock();
     totalTime = endTime - startTime;
     printf("\nStart Time = %d\n	End Time = %d\n	Total Time = %d\n", startTime, endTime, totalTime);
     return 0;
