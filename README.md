@@ -12,6 +12,8 @@ This repository contains all the C programs that I have executed in my Design an
 | 4  | [4_quickSort.c](https://github.com/rexgraystone/daa/blob/master/4_quickSort.c)  | A C program to sort an array using Quick Sort Algorithm. |
 | 5  | [5_primsAlgorithm.c](https://github.com/rexgraystone/daa/blob/master/5_primsAlgorithm.c)  | A C program to find the Minimum Cost Spanning Tree of a given graph using Prim's Algorithm. |
 | 6  | [6_kruskalsAlgorithm.c](https://github.com/rexgraystone/daa/blob/master/6_kruskalsAlgorithm.c)  | A C program to find the Minimum Cost Spanning Tree of a given graph using Kruskal's Algorithm. |
+| 7  | [7_knapSack.c](https://github.com/rexgraystone/daa/blob/master/7_knapSack.c)  | A C program to solve the 0/1 Knapsack Problem using Dynamic Programming. |
+| 8  | [8_longestCommonSubsequence.c](https://github.com/rexgraystone/daa/blob/master/8_longestCommonSubsequence.c)  | A C program to find the Longest Common Subsequence of two given strings using Dynamic Programming. |
 
 ## Miscellaneous Programs
 
