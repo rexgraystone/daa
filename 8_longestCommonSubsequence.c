@@ -28,13 +28,15 @@ void printSequence(int i, int j) {
 void longestCommonSubsequence() {
     m = strlen(x);
     n = strlen(y);
-    for(i = 0; i <= m; i++)
+    for(i = 0; i <= m; i++) {
         c[i][0] = 0;
-    for(i = 0; i <= n; i++)
+    }
+    for(i = 0; i <= n; i++) {
         c[0][i] = 0;   
+    }
     //c, u and l denotes cross, upward and downward directions respectively
     for(i = 1; i <= m; i++) {
-        for(j = 1;j <= n; j++) {
+        for(j = 1; j <= n; j++) {
             if(x[i - 1] == y[j - 1]) {
                 c[i][j] = c[i - 1][j - 1] + 1;
                 b[i][j] = 'c';
