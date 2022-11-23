@@ -4,23 +4,24 @@
 
 # include <stdio.h>
 # include <string.h>
+# include <time.h>
  
 int i, j, m, n, c[20][20];
 char x[20], y[20], b[20][20];
  
-void print(int i, int j) {
+void printSequence(int i, int j) {
     if(i == 0 || j == 0) {
         return;
     }
     if(b[i][j] == 'c') {
-        print(i - 1, j - 1);
+        printSequence(i - 1, j - 1);
         printf("%c", x[i - 1]);
     }
     else if(b[i][j] == 'u') {
-        print(i - 1, j);
+        printSequence(i - 1, j);
     }
     else {
-        print(i, j - 1);
+        printSequence(i, j - 1);
     }
 }
  
@@ -51,13 +52,17 @@ void longestCommonSubsequence() {
 }
  
 int main() {
-    printf("Enter 1st sequence:");
+    int startTime, endTime, totalTime;
+    printf("Enter the 1st sequence: ");
     scanf("%s", x);
-    printf("Enter 2nd sequence:");
+    printf("Enter the 2nd sequence: ");
     scanf("%s", y);
     printf("\nThe Longest Common Subsequence is ");
+    startTime = clock();
     longestCommonSubsequence();
-    print(m, n);
-    getch();
+    printSequence(m, n);
+    endTime = clock();
+    totalTime = endTime - startTime;
+    printf("\nStart Time = %d ms \nEnd Time = %d ms \nTotal Time = %d ms\n", startTime, endTime, totalTime);
     return 0;
 }

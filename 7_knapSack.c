@@ -3,6 +3,7 @@
 */
 
 # include <stdio.h>
+# include <time.h>
  
 // A utility function that returns
 // maximum of two integers
@@ -41,7 +42,11 @@ int main() {
     int wt[] = {10, 20, 30};
     int W = 50;
     int n = sizeof(val) / sizeof(val[0]);
+    int startTime, endTime, totalTime;
+    startTime = clock();
     printf("%d", knapSack(W, wt, val, n));
-    getch ();
+    endTime = clock();
+    totalTime = endTime - startTime;
+    printf("\nStart Time = %d ms \nEnd Time = %d ms \nTotal Time = %d ms\n", startTime, endTime, totalTime);
     return 0;
 }
