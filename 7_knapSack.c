@@ -38,8 +38,8 @@ int knapSack(int W, int wt[], int val[], int n) {
  
 // Driver program to test above function
 int main() {
-    int val[] = {60, 100, 120};
-    int wt[] = {10, 20, 30};
+    int val[] = {60, 100, 40, 50, 70, 30, 40, 20, 10, 15};
+    int wt[] = {5, 10, 10, 15, 15, 15, 20, 20, 25};
     int W = 50;
     int n = sizeof(val) / sizeof(val[0]);
     int startTime, endTime, totalTime;

@@ -6,8 +6,10 @@
 # include <string.h>
 # include <time.h>
  
-int i, j, m, n, c[20][20];
-char x[20], y[20], b[20][20];
+# define MAX 100
+
+int i, j, m, n, c[MAX][MAX];
+char x[MAX], y[MAX], b[MAX][MAX];
  
 void printSequence(int i, int j) {
     if(i == 0 || j == 0) {
