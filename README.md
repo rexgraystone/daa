@@ -14,6 +14,7 @@ This repository contains all the C programs that I have executed in my Design an
 | 6  | [6_kruskalsAlgorithm.c](https://github.com/rexgraystone/daa/blob/master/6_kruskalsAlgorithm.c)  | A C program to find the Minimum Cost Spanning Tree of a given graph using Kruskal's Algorithm. |
 | 7  | [7_knapSack.c](https://github.com/rexgraystone/daa/blob/master/7_knapSack.c)  | A C program to solve the 0/1 Knapsack Problem using Dynamic Programming. |
 | 8  | [8_longestCommonSubsequence.c](https://github.com/rexgraystone/daa/blob/master/8_longestCommonSubsequence.c)  | A C program to find the Longest Common Subsequence of two given strings using Dynamic Programming. |
+| 9  | [9_allPairsShortestPath.c](https://github.com/rexgraystone/daa/blob/master/9_allPairsShortestPath.c)  | A C program to find the All Pairs Shortest Path given graph using Floyd's Algorithm. |
 
 ## Miscellaneous Programs
 
