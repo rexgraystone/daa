@@ -25,23 +25,15 @@ int max(int a, int b)  {
  * @param wt array of weights
  * @param val array of values
  * @param n number of items
- * @return int 
+ * @return (int) the maximum value that can be put in a knapsack of capacity W 
  */
 int knapSack(int W, int wt[], int val[], int n) {
-    // Base Case
-    if (n == 0 || W == 0) {
+    if (n == 0 || W == 0) { // Base Case
         return 0;
     }
-    // If weight of the nth item is more than
-    // Knapsack capacity W, then this item cannot
-    // be included in the optimal solution
     if (wt[n - 1] > W) {
         return knapSack(W, wt, val, n - 1);
-    }
-    // Return the maximum of two cases:
-    // (1) nth item included
-    // (2) not included
-    else {
+    } else {
         return max(
                     val[n - 1]
                     + knapSack(W - wt[n - 1],

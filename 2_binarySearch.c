@@ -12,7 +12,7 @@
  * @param arr array
  * @param n size of array
  * @param key key element to be searched
- * @return int index of key element if found, else -1
+ * @return (int) index of key element if found, else -1
  */
 int binarySearch(int arr[], int l, int h, int n) { // l = low, h = high, n = number to be searched
     if (h >= l) { // base case

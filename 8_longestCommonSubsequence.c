@@ -48,18 +48,17 @@ void longestCommonSubsequence() {
     for(i = 0; i <= n; i++) {
         c[0][i] = 0;   
     }
-    //c, u and l denotes cross, upward and downward directions respectively
     for(i = 1; i <= m; i++) {
         for(j = 1; j <= n; j++) {
             if(x[i - 1] == y[j - 1]) {
                 c[i][j] = c[i - 1][j - 1] + 1;
-                b[i][j] = 'c';
+                b[i][j] = 'c'; // cross direction
             } else if(c[i - 1][j] >= c[i][j - 1]) {
                 c[i][j] = c[i - 1][j];
-                b[i][j] = 'u';
+                b[i][j] = 'u'; // upward direction
             } else {
                 c[i][j] = c[i][j - 1];
-                b[i][j] = 'l';
+                b[i][j] = 'l'; // downward direction
             }
         }
     }

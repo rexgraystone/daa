@@ -27,7 +27,7 @@ void swap(int *x, int *y) {
  * @param arr array
  * @param l left index
  * @param h right index
- * @return int index of the pivot element
+ * @return (int) index of the pivot element
  */
 int partition(int arr[n], int l, int h) { 
     int pivot = arr[l]; 

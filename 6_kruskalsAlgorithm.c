@@ -8,6 +8,7 @@
 // Time complexity of Kruskal's Algorithm: O(n^2)
 
 #define infinity 999
+
 typedef struct graph {
     int v1;
     int v2;
@@ -16,7 +17,12 @@ typedef struct graph {
 
 gr g[20];
 
-int nodes,edges;
+int nodes, edges;
+
+int find(int, int []);
+void unionFunc(int, int, int[]);
+int minimum(int);
+void spanningTree();
 
 int main() {
     int k, startTime, endTime, totalTime;
@@ -40,22 +46,40 @@ int main() {
     return 0;
 }
 
+/**
+ * @brief to find the minimum spanning tree
+ * 
+ * @param v2 the first vertex
+ * @param parent[] the array of parent vertices
+ * @return (int) the parent vertex
+ */
 int find(int v2, int parent[]) {
     while(parent[v2] != v2) {
         v2 = parent[v2];
     }
     return v2;
 }
-
+/**
+ * @brief to perform the union operation
+ * 
+ * @param i 
+ * @param j 
+ * @param parent 
+ */
 void unionFunc(int i, int j, int parent[10]) {
     if(i < j) {
         parent[j] = i;
-    } 
-    else {
+    } else {
         parent[i] = j;
     }
 }
 
+/**
+ * @brief to find the minimum cost edge
+ * 
+ * @param n the number of edges
+ * @return (int) the minimum cost edge
+ */
 int minimum(int n) {
     int i, small, pos;
     small = infinity;
@@ -69,6 +93,10 @@ int minimum(int n) {
     return pos;
 }
 
+/**
+ * @brief to find the spanning tree
+ * 
+ */
 void spanningTree() {
     int count, k, v1, v2, i, j, tree[10][10], pos, parent[10];
     int sum;
@@ -105,8 +133,7 @@ void spanningTree() {
             printf("%d\n", tree[i][1]);
         }
         printf("\nThe cost of the spanning tree is: %d", sum);
-    }
-    else {
+    } else {
         printf("No spanning tree:");
     }
 }
