@@ -2,17 +2,31 @@
     7. Write a C program to implement 0/1 Knapsack problem using Dynamic Programming.
 */
 
-# include <stdio.h>
-# include <time.h>
+#include <stdio.h>
+#include <time.h>
  
-// A utility function that returns
-// maximum of two integers
+// Time complexity of 0/1 Knapsack problem: O(n^2)
+
+/**
+ * @brief a utility function that returns the maximum of two integers
+ * 
+ * @param a first integer
+ * @param b second integer
+ * @return int 
+ */
 int max(int a, int b)  { 
     return (a > b) ? a : b; 
 }
- 
-// Returns the maximum value that can be
-// put in a knapsack of capacity W
+
+/**
+ * @brief to solve the 0/1 Knapsack problem using Dynamic Programming
+ * 
+ * @param W capacity of the knapsack
+ * @param wt array of weights
+ * @param val array of values
+ * @param n number of items
+ * @return int 
+ */
 int knapSack(int W, int wt[], int val[], int n) {
     // Base Case
     if (n == 0 || W == 0) {
@@ -36,7 +50,6 @@ int knapSack(int W, int wt[], int val[], int n) {
     }
 }
  
-// Driver program to test above function
 int main() {
     int val[] = {60, 100, 40, 50, 70, 30, 40, 20, 10, 15};
     int wt[] = {5, 10, 10, 15, 15, 15, 20, 20, 25};

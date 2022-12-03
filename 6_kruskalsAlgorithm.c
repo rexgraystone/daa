@@ -2,10 +2,12 @@
     6. Write a C program to implement Kruskal's algorithm for finding the minimum spanning tree of a given weighted graph.
 */
 
-# include <stdio.h>
-# include <time.h>
+#include <stdio.h>
+#include <time.h>
 
-# define infinity 999
+// Time complexity of Kruskal's Algorithm: O(n^2)
+
+#define infinity 999
 typedef struct graph {
     int v1;
     int v2;

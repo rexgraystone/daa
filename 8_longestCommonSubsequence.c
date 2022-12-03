@@ -2,15 +2,23 @@
     8. Write a C program to implement Longest Common Subsequence of two given strings using Dynamic Programming.
 */
 
-# include <stdio.h>
-# include <string.h>
-# include <time.h>
+#include <stdio.h>
+#include <string.h>
+#include <time.h>
  
-# define MAX 100
+// Time complexity of Longest Common Subsequence: O(m*n)
+
+#define MAX 100
 
 int i, j, m, n, c[MAX][MAX];
 char x[MAX], y[MAX], b[MAX][MAX];
- 
+
+/**
+ * @brief to print the Longest Common Subsequence
+ * 
+ * @param i index of x
+ * @param j index of y
+ */ 
 void printSequence(int i, int j) {
     if(i == 0 || j == 0) {
         return;
@@ -18,15 +26,19 @@ void printSequence(int i, int j) {
     if(b[i][j] == 'c') {
         printSequence(i - 1, j - 1);
         printf("%c", x[i - 1]);
-    }
-    else if(b[i][j] == 'u') {
+    } else if(b[i][j] == 'u') {
         printSequence(i - 1, j);
-    }
-    else {
+    } else {
         printSequence(i, j - 1);
     }
 }
- 
+
+/**
+ * @brief to find the Longest Common Subsequence
+ * 
+ * @param x string
+ * @param y string
+ */ 
 void longestCommonSubsequence() {
     m = strlen(x);
     n = strlen(y);
@@ -42,12 +54,10 @@ void longestCommonSubsequence() {
             if(x[i - 1] == y[j - 1]) {
                 c[i][j] = c[i - 1][j - 1] + 1;
                 b[i][j] = 'c';
-            }
-            else if(c[i - 1][j] >= c[i][j - 1]) {
+            } else if(c[i - 1][j] >= c[i][j - 1]) {
                 c[i][j] = c[i - 1][j];
                 b[i][j] = 'u';
-            }
-            else {
+            } else {
                 c[i][j] = c[i][j - 1];
                 b[i][j] = 'l';
             }

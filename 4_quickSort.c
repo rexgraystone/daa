@@ -2,23 +2,39 @@
     4. Write a program to sort an array using quick sort algorithm.
 */
 
-# include <stdio.h>
-# include <time.h>
+#include <stdio.h>
+#include <time.h>
+
+// Time complexity of Quick Sort Algorithm: O(n log n)
 
 int n = 15; // number of elements in the array
 
-void swap(int *x, int *y) { // swap the values of x and y
-    int temp = *x; // store the value of x in temp
-    *x = *y; // store the value of y in x
-    *y = temp; // store the value of temp in y
+/**
+ * @brief to swap two elements in an array
+ * 
+ * @param x pointer array element
+ * @param y pointer array element
+ */
+void swap(int *x, int *y) { 
+    int temp = *x; 
+    *x = *y; 
+    *y = temp; 
 }
 
-int partition(int arr[n], int l, int h) { // l = low, h = high
-    int pivot = arr[l]; // initialize pivot to the first element
-    int i = l; // initialize i to low
-    int j = h; // initialize j to high
-    while (i < j) { // run the loop until i and j cross each other
-        do { // run the loop until the element at i is greater than the pivot
+/**
+ * @brief to partition the array
+ * 
+ * @param arr array
+ * @param l left index
+ * @param h right index
+ * @return int index of the pivot element
+ */
+int partition(int arr[n], int l, int h) { 
+    int pivot = arr[l]; 
+    int i = l; 
+    int j = h; 
+    while (i < j) { 
+        do { 
             i++; // increment i
         } while (arr[i] <= pivot); // run the loop until the element at i is greater than the pivot
         do { // run the loop until the element at j is smaller than the pivot
@@ -32,6 +48,13 @@ int partition(int arr[n], int l, int h) { // l = low, h = high
     return j; // return the index of the pivot
 }
 
+/**
+ * @brief to sort the array using quick sort algorithm
+ * 
+ * @param arr array
+ * @param l left index
+ * @param h right index
+ */
 void quickSort(int arr[n], int l, int h) { // l = low, h = high
     if(l < h) { // run the loop until the array has only one element
         int j = partition(arr, l, h); // partition the array
@@ -40,30 +63,40 @@ void quickSort(int arr[n], int l, int h) { // l = low, h = high
     }
 }
 
-void enterArr(int arr[n]) { // enter the elements of the array
-    printf("Enter the elements for an array of size %d - \n\n", n); // input the elements of the array
-    for(int i = 0; i<n; i++) { // for all the elements in the array
-        printf("\tEnter the element at position %d: ", i); // input the element
+/**
+ * @brief to enter the elements of the array
+ * 
+ * @param arr array
+ */
+void enterArr(int arr[n]) { 
+    printf("Enter the elements for an array of size %d - \n\n", n); 
+    for(int i = 0; i<n; i++) { 
+        printf("\tEnter the element at position %d: ", i); 
         scanf("%d", &arr[i]);
     }
 }
 
-void printArr(int arr[n]) { // print the elements of the array
-    for(int i = 0; i<n; i++) { // for all the elements in the array
-        printf("\tElement at position %d of the sorted array is: %d\n", i, arr[i]); // print the element
+/**
+ * @brief to display the elements of the array
+ * 
+ * @param arr array
+ */
+void printArr(int arr[n]) { 
+    for(int i = 0; i<n; i++) { 
+        printf("\tElement at position %d of the sorted array is: %d\n", i, arr[i]); 
     }
 }
 
 int main() {
-    int arr[n]; // array to be sorted
-    int st, endTime, totalTime; 
-    enterArr(arr); // call the function to enter the elements of the array
-    st = clock(); // start time
-    quickSort(arr, 0, (n - 1)); // call the function to sort the array
-    endTime = clock(); // end time
-    printf("\nThe array has been sorted.\n\n"); // print the array has been sorted
-    printArr(arr); // call the function to print the elements of the array
-    totalTime = endTime - st; // total time
-    printf("Total time taken is %d ms.\n", totalTime); // print the total time
+    int arr[n]; 
+    int startTime, endTime, totalTime; 
+    enterArr(arr); 
+    startTime = clock();
+    quickSort(arr, 0, (n - 1)); 
+    endTime = clock(); 
+    printf("\nThe array has been sorted.\n\n"); 
+    printArr(arr); 
+    totalTime = endTime - startTime; 
+    printf("\nStart Time = %d\nEnd Time = %d\nTotal Time = %d ms\n", startTime, endTime, totalTime);
     return 0; 
 }

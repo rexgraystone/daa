@@ -2,40 +2,48 @@
     2. Write a program to search for a key element in an array using binary search algorithm.
 */
 
-# include <stdio.h> 
-# include <time.h> 
+#include <stdio.h> 
+#include <time.h> 
 
+// Time complexity of Binary Search Algorithm: O(log n)
+
+/**
+ * @brief to search for a key element in an array using binary search algorithm
+ * @param arr array
+ * @param n size of array
+ * @param key key element to be searched
+ * @return int index of key element if found, else -1
+ */
 int binarySearch(int arr[], int l, int h, int n) { // l = low, h = high, n = number to be searched
     if (h >= l) { // base case
         int m = l + (h - l)/2; // calculate the middle index
-        if (arr[m] == n) { // if the middle element is the number to be searched
-            return m; // return the middle index
+        if (arr[m] == n) { 
+            return m; 
         }
-        if (arr[m] > n) { // if the middle element is greater than the number to be searched
-            return binarySearch(arr, l, m-1, n); // search in the left subarray
+        if (arr[m] > n) { 
+            return binarySearch(arr, l, m - 1, n); 
         }    
-        return binarySearch(arr, m+1, h, n); // search in the right subarray
+        return binarySearch(arr, m + 1, h, n); 
     }
-    return -1; // if the number is not found
+    return -1; 
 }
 
 int main(void) { 
-    int arr[] = {1, 4, 7, 9, 16, 56, 70}; // array to be searched
-    int l = 0; // low index
-    int h = 7; // high index
-    int n, startTime, endTime, totalTime; // n = number to be searched
-    printf("Enter a number: \n"); // input the number to be searched
-    scanf("%d", &n); // store the number to be searched in n
-    startTime = clock(); // start time
-    int i = binarySearch(arr, l, h-1, n); // call the function
-    endTime = clock(); // end time
-    totalTime = endTime - startTime; // total time
-    if(i == -1 ) { // if the number is not found
-        printf("Element %d not found in the array.\n", n); // print the number is not found
+    int arr[] = {1, 4, 7, 9, 16, 56, 70}; 
+    int l = 0; 
+    int h = 7; 
+    int n, startTime, endTime, totalTime; 
+    printf("Enter a number: \n"); 
+    scanf("%d", &n); 
+    startTime = clock(); 
+    int i = binarySearch(arr, l, h - 1, n); 
+    endTime = clock(); 
+    totalTime = endTime - startTime; 
+    if(i == -1 ) { 
+        printf("Element %d not found in the array.\n", n); 
+    } else { 
+        printf("Element %d found at index: %d.\n", n, i); 
     }
-    else { // if the number is found
-        printf("Element %d found at index: %d.\n", n, i); // print the number is found
-    }
-    printf("Total time taken is %d ms.\n", totalTime); // print the total time
+    printf("\nStart Time = %d\nEnd Time = %d\nTotal Time = %d ms\n", startTime, endTime, totalTime);
     return 0;
 }

@@ -2,17 +2,19 @@
 	5. Write a C program to find the minimum spanning tree using Prim's algorithm.
 */
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-# define infinity 9999 
-# define MAX 20
+// Time complexity of Prim's Algorithm: O(n^2)
+
+#define infinity 9999 
+#define MAX 20
  
 int initialGraph[MAX][MAX], spanningTree[MAX][MAX], n;
- 
+
+void displayGraph(int [][MAX], int); 
 int prims();
-void displayGraph(int [][MAX], int);
 
 int main() {
 	int i, j, startTime, endTime, totalTime, totalCost;
@@ -40,6 +42,12 @@ int main() {
 	return 0;
 }
 
+/**
+ * @brief to display the edges of the graph
+ * 
+ * @param Graph the adjacency matrix of the graph
+ * @param n the number of vertices in the graph
+ */
 void displayGraph(int Graph[][MAX], int n) {
     int i, j;
 	for(i = 0; i < n; i++) {
@@ -55,6 +63,11 @@ void displayGraph(int Graph[][MAX], int n) {
     }
 }
 
+/**
+ * @brief to find the minimum spanning tree using Prim's algorithm
+ * 
+ * @return the total cost of the spanning tree
+ */
 int prims() {
 	int cost[MAX][MAX];
 	int u, v, minDistance, distance[MAX], from[MAX];
@@ -64,14 +77,12 @@ int prims() {
 		for(j = 0; j < n; j++) {
 			if(initialGraph[i][j] == 0) {
 				cost[i][j] = infinity;
-            }
-			else {
+            } else {
 				cost[i][j] = initialGraph[i][j];
 				spanningTree[i][j] = 0;
             }
 		}
     }
-	//initialise visited[], distance[] and from[]
 	distance[0] = 0;
 	visited[0] = 1;
 	for(i = 1; i < n; i++) {
@@ -79,10 +90,9 @@ int prims() {
 		from[i] = 0;
 		visited[i] = 0;
 	}
-	minCost = 0;		//cost of spanningTree tree
-	noOfEdges = (n - 1);		//no. of edges to be added
+	minCost = 0;		
+	noOfEdges = (n - 1);		
 	while(noOfEdges > 0) {
-		//find the vertex at minimum distance from the tree
 		minDistance = infinity;
 		for(i = 1; i < n; i++) {
 			if((visited[i] == 0) && (distance[i] < minDistance)) {
@@ -91,12 +101,10 @@ int prims() {
 			}
         }
 		u = from[v];
-		//insert the edge in spanningTree tree
 		spanningTree[u][v] = distance[v];
 		spanningTree[v][u] = distance[v];
 		noOfEdges--;
 		visited[v] = 1;
-		//updated the distance[] array
 		for(i = 1; i < n; i++) {
 			if((visited[i] == 0) && (cost[i][v] < distance[i])) {
 				distance[i] = cost[i][v];
