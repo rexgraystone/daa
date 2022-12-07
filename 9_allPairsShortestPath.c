@@ -1,5 +1,5 @@
 /*
-    9. Write graph program to calculate the all pairs shortest path of graph given graph using Floyd's algorithm.
+    9. Write a C program to calculate the all pairs shortest path of a given graph using Floyd's algorithm.
 */
 
 #include <stdio.h>
