@@ -91,6 +91,6 @@ int main() {
     printf("\nThe array has been sorted.\n\n");
     printArr(arr);
     totalTime = endTime - startTime;
-    printf("\nTotal time taken is %d ms.\n", totalTime);
+    printf("\nStart Time = %d ms \nEnd Time = %d ms \nTotal Time = %d ms\n", startTime, endTime, totalTime); 
     return 0;
 }
