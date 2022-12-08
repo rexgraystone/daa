@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <time.h>
 
-// Time complexity of Quick Sort Algorithm: O(n log n)
+// Time complexity of Quick Sort Algorithm: O(n log n), O(n^2) for worst case
 
 int n = 15; // number of elements in the array
 
