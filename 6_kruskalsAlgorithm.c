@@ -26,7 +26,6 @@ void spanningTree();
 
 int main() {
     int k, startTime, endTime, totalTime;
-    void spanningTree();
     printf("\n\tGRAPH CREATION\n");
     printf("Enter the number of nodes: ");
     scanf("%d", &nodes);
@@ -98,13 +97,10 @@ int minimum(int n) {
  * 
  */
 void spanningTree() {
-    int count, k, v1, v2, i, j, tree[10][10], pos, parent[10];
-    int sum;
-    count = 0;
-    k = 0;
-    sum = 0;
+    int count = 0, k = 0, v1, v2, i, j, tree[10][10], pos, parent[10];
+    int sum = 0;
     for(i = 0; i < nodes; i++)
-    parent[i] = i;
+        parent[i] = i;
     while(count != nodes - 1) {
         pos = minimum(edges);
         if(pos == -1) {
