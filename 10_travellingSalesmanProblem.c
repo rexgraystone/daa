@@ -15,7 +15,7 @@ void takeInput() {
     scanf("%d", &n);
     printf("\nEnter the Cost Matrix\n");
     for(i = 0; i < n; i++) {
-        printf("\nEnter Elements of Row: %d\n", i + 1);
+        printf("\nEnter Elements of Row %d: ", i + 1);
             for(j = 0; j < n; j++)
                 scanf("%d", &ary[i][j]);
         completed[i] = 0;
