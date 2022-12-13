@@ -46,17 +46,17 @@ int least(int city) {
 }
 
 void minCost(int city) {
-    int i, ncity;
+    int i, nCity;
     completed[city] = 1;
     printf("%d--->", city + 1);
-    ncity = least(city);
-    if(ncity == 999) {
-        ncity = 0;
-        printf("%d", ncity + 1);
-        cost += arr[city][ncity];
+    nCity = least(city);
+    if(nCity == 999) {
+        nCity = 0;
+        printf("%d", nCity + 1);
+        cost += arr[city][nCity];
         return;
     }
-    minCost(ncity);
+    minCost(nCity);
 }
  
 int main() {
