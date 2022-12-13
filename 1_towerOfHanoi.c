@@ -16,7 +16,7 @@ int count = 0;
  * @param mid middle rod
  * @param end ending rod
  */
-void towerOfHanoi(int n, char beg, char mid, char end) { // beg = beginning, mid = middle, end = end
+void towerOfHanoi(int n, char beg, char mid, char end) { 
     if(n == 1) { // base case
         printf("%d. ", ++count); 
         printf("Moving disk 1 from tower %c to tower %c.\n", beg, end); 
