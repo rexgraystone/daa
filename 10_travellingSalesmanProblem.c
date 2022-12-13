@@ -8,41 +8,41 @@
 // Time complexity of Travelling Salesman Problem: O(n^2 * 2^n)
 
 #define MAX 15
-int ary[MAX][MAX], completed[MAX], n, cost = 0;
+int arr[MAX][MAX], completed[MAX], n, cost = 0;
  
 void takeInput() {
     int i, j;
-    printf("Enter the number of villages: ");
+    printf("Enter the number of cities: ");
     scanf("%d", &n);
     printf("\nEnter the Cost Matrix\n");
     for(i = 0; i < n; i++) {
         printf("\nEnter Elements of Row %d: ", i + 1);
             for(j = 0; j < n; j++)
-                scanf("%d", &ary[i][j]);
+                scanf("%d", &arr[i][j]);
         completed[i] = 0;
     } 
     printf("\n\nThe cost list is: ");
     for(i = 0; i < n; i++) {
         printf("\n"); 
         for(j = 0; j < n; j++)
-            printf("\t%d", ary[i][j]);
+            printf("\t%d", arr[i][j]);
     }
 }
 
-int least(int c) {
-    int i, nc = 999;
+int least(int city) {
+    int i, nCity = 999;
     int min = 999, kmin; 
     for(i = 0; i < n; i++) {
-        if((ary[c][i] != 0) && (completed[i] == 0))
-            if(ary[c][i] + ary[i][c] < min) {
-                min = ary[i][0] + ary[c][i];
-                kmin = ary[c][i];
-                nc = i;
+        if((arr[city][i] != 0) && (completed[i] == 0))
+            if(arr[city][i] + arr[i][city] < min) {
+                min = arr[i][0] + arr[city][i];
+                kmin = arr[city][i];
+                nCity = i;
             }
     } 
     if(min != 999)
         cost += kmin;
-    return nc;
+    return nCity;
 }
 
 void minCost(int city) {
@@ -53,7 +53,7 @@ void minCost(int city) {
     if(ncity == 999) {
         ncity = 0;
         printf("%d", ncity + 1);
-        cost += ary[city][ncity];
+        cost += arr[city][ncity];
         return;
     }
     minCost(ncity);
