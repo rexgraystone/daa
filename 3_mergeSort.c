@@ -23,19 +23,19 @@ void simpleMerge(int arr[], int l, int mid, int h) {
     j = mid + 1; 
     k = l; 
     while((i <= mid) && (j <= h)) { 
-        if(arr[i] < arr[j]) { 
+        if(arr[i] < arr[j]) { // copy the smaller element (at index i++) to c[]
             c[k++] = arr[i++]; 
-        } else { 
+        } else { // copy the smaller element (at index j++) to c[]
             c[k++] = arr[j++]; 
         }
     }
-    while(i <= mid) { 
-        c[k++] = arr[i++];
+    while(i <= mid) { // copy the remaining elements from index i++ to c 
+        c[k++] = arr[i++]; 
     }
-    while(j <= h) { 
+    while(j <= h) { // copy the remaining elements from index j++ to c
         c[k++] = arr[j++]; 
     }
-    for(i = l; i <= (k - 1); i++) { 
+    for(i = l; i <= (k - 1); i++) { // copy the elements from c[] to arr[]
         arr[i] = c[i]; 
     }
 }

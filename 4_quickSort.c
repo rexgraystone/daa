@@ -35,13 +35,13 @@ int partition(int arr[n], int l, int h) {
     int j = h; 
     while (i < j) { 
         do { 
-            i++; // increment i
-        } while (arr[i] <= pivot); // run the loop until the element at i is greater than the pivot
-        do { // run the loop until the element at j is smaller than the pivot
-            j--; // decrement j
-        } while (arr[j] > pivot); // run the loop until the element at j is smaller than the pivot
-        if(i < j) { // if i and j have not crossed each other
-            swap(&arr[i], &arr[j]); // swap the elements at i and j
+            i++; 
+        } while (arr[i] <= pivot); 
+        do { 
+            j--; 
+        } while (arr[j] > pivot); 
+        if(i < j) { 
+            swap(&arr[i], &arr[j]); 
         }
     }
     swap(&arr[l], &arr[j]); // swap the pivot with the element at j
@@ -57,7 +57,7 @@ int partition(int arr[n], int l, int h) {
  */
 void quickSort(int arr[n], int l, int h) { // l = low, h = high
     if(l < h) { // run the loop until the array has only one element
-        int j = partition(arr, l, h); // partition the array
+        int j = partition(arr, l, h); 
         quickSort(arr, l, j); // sort the left subarray
         quickSort(arr, (j + 1), h); // sort the right subarray
     }
@@ -70,7 +70,7 @@ void quickSort(int arr[n], int l, int h) { // l = low, h = high
  */
 void enterArr(int arr[n]) { 
     printf("Enter the elements for an array of size %d - \n\n", n); 
-    for(int i = 0; i<n; i++) { 
+    for(int i = 0; i < n; i++) { 
         printf("\tEnter the element at position %d: ", i); 
         scanf("%d", &arr[i]);
     }
@@ -82,7 +82,7 @@ void enterArr(int arr[n]) {
  * @param arr array
  */
 void printArr(int arr[n]) { 
-    for(int i = 0; i<n; i++) { 
+    for(int i = 0; i < n; i++) { 
         printf("\tElement at position %d of the sorted array is: %d\n", i, arr[i]); 
     }
 }
