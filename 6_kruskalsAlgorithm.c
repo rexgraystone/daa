@@ -118,7 +118,7 @@ void spanningTree() {
             sum += g[pos].cost;
             unionFunc(i, j, parent);
         }
-        g[pos].cost=infinity;
+        g[pos].cost = infinity;
     }
     if(count == nodes - 1) {
         printf("\n\tSPANNING TREE IS:\n");
