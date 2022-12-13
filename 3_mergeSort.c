@@ -51,7 +51,7 @@ void mergeSort(int arr[], int l, int h) {
     int mid; 
     if(l < h) { 
         mid = (l + h)/2; 
-        mergeSort(arr, l, mid) ); 
+        mergeSort(arr, l, mid); 
         mergeSort(arr, (mid + 1), h); 
         simpleMerge(arr, l, mid, h); 
     }
