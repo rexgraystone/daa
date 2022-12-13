@@ -25,12 +25,12 @@ void floyd(int graph[MAX][MAX], int n) {
 	    }
 	}
 	printf("The All Pairs Shortest Path for the given graph is: \n");
-		for(i = 0; i < n; i++) {
-	    	for(j = 0; j < n; j++) {
-	    		printf("%d ", graph[i][j]);
-			}
-	    	printf("\n");
+	for(i = 0; i < n; i++) {
+		for(j = 0; j < n; j++) {
+			printf("%d ", graph[i][j]);
 		}
+		printf("\n");
+	}
 }
 
 int main() {
