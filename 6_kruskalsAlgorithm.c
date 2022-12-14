@@ -22,7 +22,7 @@ int nodes, edges;
 int find(int, int []);
 void unionFunc(int, int, int[]);
 int minimum(int);
-void spanningTree();
+void kruskals();
 
 int main() {
     int k, startTime, endTime, totalTime;
@@ -38,7 +38,7 @@ int main() {
         scanf("%d", &g[k].cost);
     }
     startTime = clock();
-    spanningTree();
+    kruskals();
     endTime = clock();
     totalTime = endTime - startTime;
     printf("\nStart Time = %d\nEnd Time = %d\nTotal Time = %d ms\n", startTime, endTime, totalTime);
@@ -96,7 +96,7 @@ int minimum(int n) {
  * @brief to find the spanning tree
  * 
  */
-void spanningTree() {
+void kruskals() {
     int count = 0, k = 0, v1, v2, i, j, tree[10][10], pos, parent[10];
     int sum = 0;
     for(i = 0; i < nodes; i++)
