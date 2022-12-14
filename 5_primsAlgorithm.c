@@ -69,9 +69,8 @@ void displayGraph(int Graph[][MAX], int n) {
  * @return the total cost of the spanning tree
  */
 int prims() {
-	int cost[MAX][MAX];
-	int u, v, minDistance, distance[MAX], from[MAX];
-	int visited[MAX], noOfEdges, i, minCost, j;
+	int cost[MAX][MAX], distance[MAX], from[MAX], visited[MAX];
+	int minDistance, noOfEdges, minCost, u, v, i, j;
 	//create cost[][] matrix, spanningTree[][]
 	for(i = 0; i < n; i++) {
 		for(j = 0; j < n; j++) {
