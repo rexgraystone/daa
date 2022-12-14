@@ -130,7 +130,7 @@ void spanningTree() {
         }
         printf("\nThe cost of the spanning tree is: %d", sum);
     } else {
-        printf("No spanning tree:");
+        printf("\nNo spanning tree.");
     }
 }
 
