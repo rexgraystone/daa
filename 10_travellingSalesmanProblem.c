@@ -33,12 +33,13 @@ int least(int city) {
     int i, nCity = 999;
     int min = 999, kmin; 
     for(i = 0; i < n; i++) {
-        if((arr[city][i] != 0) && (completed[i] == 0))
+        if((arr[city][i] != 0) && (completed[i] == 0)) {
             if(arr[city][i] + arr[i][city] < min) {
                 min = arr[i][0] + arr[city][i];
                 kmin = arr[city][i];
                 nCity = i;
             }
+        }
     } 
     if(min != 999)
         cost += kmin;
